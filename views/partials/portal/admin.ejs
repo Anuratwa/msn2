@@ -1,0 +1,127 @@
+<h1 class="portalHeader">
+    WELCOME TO THE ADMIN PAGE
+</h1>
+
+<div style="text-align:center; margin:10px 0 30px 0;">
+    <button class="login" style="width:200px;" ng-click="showLeagueManager = true; showGameManager = false;">League Manager</button>
+    <button class="login" style="width:200px;" ng-click="showLeagueManager = false; showGameManager = true;">Game Manager</button>
+</div>
+
+<div class="adminStyle" ng-show="showLeagueManager">
+    <h2>League Manager</h2>
+    <span>
+        <h2>SPORTS in {{league.name}}</h2>
+        Select a Sport:
+        <select ng-model="sport" ng-options="s.name for s in sports"></select><br>
+        or add New Sport:
+        <input type="text" ng-model="newSport" placeholder="Name">
+        <br>
+        <button ng-click="createSport()" style="color:black;">SUBMIT SPORT</button>
+    </span>
+    <br><br>
+    <span ng-show="showDivisions">
+        <h2>DIVISIONS in {{sport.name}}</h2>
+        Select a Division:
+        <select ng-model="division" ng-options="d.name for d in divisions"></select><br>
+        or add New Division:
+        <input type="text" ng-model="newDivision" placeholder="Name">
+        <br>
+        <input type="number" ng-model="dStartMonth" placeholder="Start Month (mm)">
+        <input type="number" ng-model="dStartYear" placeholder="Start Year (yyyy)">
+        <br>
+        <input type="number" ng-model="dEndMonth" placeholder="End Month (mm)">
+        <input type="number" ng-model="dEndYear" placeholder="End Year (yyyy)">
+        <br>
+        <button ng-click="createDivision()" style="color:black;">SUBMIT DIVISION</button>
+    </span>
+    <br><br>
+    <span ng-show="showTeams">
+        <h2>TEAMS in {{division.name}}</h2>
+        Select a Team:
+        <select ng-model="team" ng-options="t.name for t in teams"></select><br>
+        or add New Team:
+        <input type="text" ng-model="newTeam" placeholder="Name">
+        <br>
+        <input type="number" ng-model="tStartMonth" placeholder="Start Month (mm)">
+        <input type="number" ng-model="tStartYear" placeholder="Start Year (yyyy)">
+        <br>
+        <input type="number" ng-model="tEndMonth" placeholder="End Month (mm)">
+        <input type="number" ng-model="tEndYear" placeholder="End Year (yyyy)">
+        <br>
+        <button ng-click="createTeam()" style="color:black;">SUBMIT TEAM</button>
+    </span>
+    <br><br>
+    <span ng-show="showCaptain">
+        <h2>CAPTAIN of {{team.name}}
+            <span ng-show="captain">
+                is {{captain.first + ' ' + captain.last}}
+                with email: {{captain.email}}
+            </span>
+            <span ng-show="!captain">
+                is not currently set.
+            </span>
+        </h2>
+        <span ng-show="!captain">
+            Please add a captain by searching for email: <input type="email" ng-model="captainSearch" placeholder="New Captain's Email">
+            <button ng-click="setCaptain()" style="color:black;">SET CAPTAIN</button>
+            <br>
+            <span ng-show="captainSearchError">Error finding captain, please try again with valid email.</span>
+        </span>
+    </span>
+
+    <span ng-show="errorMsg">
+        Error: {{errorMsg}}
+    </span>
+</div>
+
+<div class="adminStyle" ng-show="showGameManager">
+    <h2>Game Manager</h2>
+
+    <span>
+        Select a sport:
+        <select ng-model="gSport" ng-options="s.name for s in sports"></select>
+    </span>
+    <br><br>
+    <span ng-show="showGDivisions">
+        Select a division:
+        <select ng-model="gDivision" ng-options="d.name for d in gDivisions"></select>
+    </span>
+    <br><br>
+    <span ng-show="showHomeTeams">
+        Select home team:
+        <select ng-model="homeTeam" ng-options="t.name for t in homeTeams"></select>
+    </span>
+    <br><br>
+    <span ng-show="showAwayTeams">
+        Select away team:
+        <select ng-model="awayTeam" ng-options="t.name for t in awayTeams"></select>
+    </span>
+    <br><br>
+    <span ng-show="showGames">
+        Choose game between squads:
+        <select ng-model="game" ng-options="g.time for g in games"></select>
+        <br>
+        or create new game between teams by choosing details:
+        <input type="text" ng-model="game.location" placeholder="Game Location">
+        <input type="text" ng-model="game.date" placeholder="Game Date">
+        <input type="time" ng-model="game.time" placeholder="Game Time">
+        <button ng-click="createGame()" style="color:black;">CREATE GAME</button>
+    </span>
+    <br><br>
+    <span ng-show="showReportScore">
+        Report a Score: <br>
+        Home Score:
+        {{homeTeam.name}}:<input type="number" ng-model="homescore">
+        <br>
+        Away Score:
+        {{awayTeam.name}}:<input type="number" ng-model="awayscore">
+        <br>
+        <button ng-click="reportScore(homescore,awayscore)" style="color:black;">Report Score</button>
+    </span>
+    <span ng-show="showScore">
+        Game score has been reported: <br>
+        {{homeTeam.name}} : {{game.home_score}}<br>
+        {{awayTeam.name}} : {{game.away_score}}<br>
+    </span>
+    <br><br>
+</div>

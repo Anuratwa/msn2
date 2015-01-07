@@ -1,0 +1,30 @@
+<h1 class="portalHeader">
+    LEAGUE OVERVIEW
+</h1>
+<div ng-show="showLeague">
+    <div class="sport" ng-repeat="sport in league.sports">
+        SPORT: {{sport.name}}
+        <div class="division" ng-repeat="division in sport.divisions">
+            <div>Division: {{division.name}}</div>
+            <table class="team" cellpadding="0" cellspacing="0">
+                <tr>
+                    <th style="width:5%;">#</th>
+                    <th style="width:72.5%; padding-left:2.5%; text-align:left;">Team Name</th>
+                    <th style="width:5%;">GP</th>
+                    <th style="width:5%;">W</th>
+                    <th style="width:5%;">L</th>
+                    <th style="width:5%; border-right:1px solid black;">D</th>
+                </tr>
+                <tr ng-repeat="team in division.teams">
+                    <td>{{$index + 1}}</td>
+                    <td style="text-align:left; padding-left:2.5%;">{{team.name}}</td>
+                    <td>{{numGamesPlayed(team)}}</td>
+                    <td>{{team.wins}}</td>
+                    <td>{{team.losses}}</td>
+                    <td>{{team.draws}}</td>
+                </tr>
+            </table>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,49 @@
+<h1 class="portalHeader">
+    WELCOME TO MCGILL SPORTS NETWORK, {{(user.first + " " + user.last).toUpperCase()}}
+</h1>
+
+<section id="teams">
+    <h1 ng-show="teams.length > 0" style="text-align:center; margin-bottom:15px;">YOUR TEAMS:</h1>
+    <div class="userteam" ng-repeat="team in teams">
+        <div class="sportHeader" style="border:0;">TEAM NAME: {{team.name}} // SPORT: {{team.sport.name}} // DIVISION: {{team.division.name}}</div>
+        <div class="sportHeader">UPCOMING GAMES:</div>
+        <div class="game">
+            <div class="home">
+                HOME TEAM
+            </div>
+            <div class="away">
+                AWAY TEAM
+            </div>
+            DATE - TIME
+        </div>
+        <div class="game" ng-repeat="game in team.games" ng-if="!game.complete">
+            <div class="home">
+                {{game.home_name}}
+            </div>
+            <div class="away">
+                {{game.away_name}}
+            </div>
+            {{game.date}} - {{game.time}}
+        </div>
+        <div class="sportHeader">PAST GAMES:</div>
+        <div class="game">
+            <div class="home">
+                HOME TEAM
+            </div>
+            <div class="away">
+                AWAY TEAM
+            </div>
+            DATE - TIME
+        </div>
+        <div class="game" ng-repeat="game in team.games" ng-if="game.complete">
+            <div class="home">
+                {{game.home_name}} ({{game.home_score}})
+            </div>
+            <div class="away">
+                ({{game.away_score}}) {{game.away_name}}
+            </div>
+            {{game.date}} - {{game.time}}
+        </div>
+    </div>
+</section>
+

@@ -1,0 +1,33 @@
+<h1 class="portalHeader">
+    WELCOME TO THE MANAGE PAGE
+</h1>
+
+<div class="manageteam" ng-repeat="team in teams">
+    SPORT: {{team.sport.name}} // DIVISION: {{team.division.name}} // TEAM NAME: {{team.name}}
+    <div style="text-align:left;">USERS:</div>
+    <table class="team" cellpadding="0" cellspacing="0">
+        <tr>
+            <th style="width:25%;">First</th>
+            <th style="width:25%;">Last</th>
+            <th style="width:50%; border-right:1px solid black;">Email</th>
+        </tr>
+        <tr ng-repeat="user in team.users">
+            <td>{{user.first}}</td>
+            <td>{{user.last}}</td>
+            <td>{{user.email}}</td>
+        </tr>
+    </table>
+</div>
+
+<div class="manageteam" style="min-height:0">
+    ADD USER TO TEAM
+    <br>
+    Select team: <select ng-model="team" ng-options="t.name for t in teams"></select>
+    <br>
+    Select user: <input type="email" ng-model="userSearch" style="color:black;">
+    <button ng-click="addUser()" style="color:black; padding:5px;">Add User</button>
+    <br>
+    <span ng-show="errorMsg">
+        {{errorMsg}}
+    </span>
+</div>

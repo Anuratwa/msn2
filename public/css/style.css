@@ -1,0 +1,418 @@
+body {
+    font-size: 20px;
+    font-weight: 400;
+	width:100%;
+    height: 100%;
+    line-height: 1.5em;
+	background: #6f1818;
+
+}
+
+html{
+	width:100%;
+	height:100%;
+	font-family: "Helvetica", 'Times New Roman';
+}
+
+h3 {
+    color: black;
+    font-size: 2.2em;
+    font-weight: 200;
+    margin: 0 0 24px 0 ;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    outline: none;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+}
+
+form.minimal label {
+    display: block;
+    margin: 6px 0;
+}
+
+section#msntop{
+    background-color: #6f1818;
+    border: 1px solid rgba(0,0,0,.15);
+    border-radius: 0 0 5px 5px;
+    box-shadow: 0px 0px 10px;
+	left: 0;
+    right: 0;
+    padding:15px;
+    background-size:100%;
+}
+
+p.header{
+    font-size: 40px;
+    font-weight: bold;
+    color: white;
+    text-align:center;
+}
+
+p.notHeader{
+    font-size: 10px;
+    font-weight: bold;
+    color: white;
+    text-align:center;
+}
+
+p.Banner{
+    font-size: 20px;
+	padding: 10px 10px 10px 10px;
+    font-weight: bold;
+    color: white;
+    text-align:left;
+}
+
+section#loginBox{
+	background-color: rgba(111, 024, 024, 0.6);
+	border: 1px solid #6f1818;
+	border-radius: 10px;
+	box-shadow: 0px 0px 0px ;
+	margin: 100px auto;
+	padding: 24px;
+	width: 500px;
+	-webkit-transition: box-shadow .75s linear, background-color .5s linear;
+	-moz-transition: box-shadow .75s linear, background-color .5s linear;
+	-o-transition: box-shadow .75s linear, background-color .5s linear;
+	transition: box-shadow .75s linear, background-color .5s linear;
+}
+
+@media screen and (max-width: 500px) {
+	section#loginBox {
+		width:400px;
+	}
+}
+
+section#loginBox:hover {
+	background-color: rgb(111, 24, 24);
+	box-shadow: 0 0 1000px;
+}
+
+section#loginBoxBG {
+	position:fixed;
+	width:100%;
+	height:100%;
+	background: #6f1818 url('http://upload.wikimedia.org/wikipedia/commons/d/dd/Arena_McConnell_01.jpg') no-repeat;
+	background-size: cover;
+	overflow:scroll;
+	padding-bottom:100px;
+}
+
+form.minimal input {
+    background-color: rgb(206, 205, 196);
+    border: 1px solid rgb(186,186,186);
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.08);
+    -moz-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.08);
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.08);
+	font-size: 14px;
+	margin: 6px 1% 12px 0;
+	padding: 15px 8px;
+	text-shadow: 0 1px 1px rgba(255, 255, 255, 1);
+	width: 96%;
+    -webkit-transition: all 0.1s linear;
+	-moz-transition: all 0.1s linear;
+	-o-transition: all 0.1s linear;
+	transition: all 0.1s linear;
+	color:black;
+}
+
+form.minimal input:focus {
+    border-color: indianred;
+    -webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1), 0 0 8px #4195fc;
+    -moz-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1), 0 0 8px #4195fc;
+     box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1), 0 0 8px #4195fc;
+     color: rgb(0, 0, 0);
+}
+
+input[type="checkbox"] {
+	width:12px !important; padding:0 !important; margin:0 !important;
+}
+
+div.inputDesc {
+	width:96%; text-align:right; font-size:12px; line-height:12px; position:absolute;
+}
+
+[class*='btn-'] {
+	border: none;
+	border-bottom: 2px solid rgba(0,0,0,.15);
+	border-top: 1px solid rgba(255,255,255,.15);
+	border-radius: 3px;
+	color: #fff;
+	display: inline-block;
+	font-size: .7em;
+	letter-spacing: 1px;
+	line-height: 140%;
+	padding: 10px 20px;
+	text-decoration: none;
+	text-shadow: 0 1px 1px rgba(0, 0, 0, 0.25);
+	text-transform: uppercase;
+	-webkit-transition: all 0.1s linear;
+	-moz-transition: all 0.1s linear;
+	-o-transition: all 0.1s linear;
+	transition: all 0.1s linear;
+}
+
+.btn-minimal {
+	background-color: rgb(255,255,255);
+	border-radius: 0;
+	border: 1px solid rgb( 186, 186, 186 );
+	color: rgb( 186, 186, 186 );
+	text-shadow: 0 1px 1px rgba(255, 255, 255, 1);
+}
+
+.btn-minimal:hover {
+	background-color: #000000;
+	border: 1px solid rgba(0,0,0,.1);
+	color: rgb(255,255,255);
+	cursor: pointer;
+	text-shadow: 0 1px 1px rgba(0, 0, 0, 0.25);
+}
+
+.btn-minimal:active {
+	box-shadow: 0 1px 1px rgba(0,0,0,0.15) inset;
+	text-shadow: 0 -1px 1px rgba(0, 0, 0, 0.25);
+}
+
+form.minimal a {
+	font-size:11px;
+	line-height:13px;
+	text-decoration:none;
+}
+
+form.minimal a:hover {
+	text-decoration:underline;
+}
+
+button.login {
+	background-color: #ed1d2d;
+	border: 1px solid #951100;
+	border-radius: 5px;
+	-webkit-box-shadow: inset 0 0 0 1px rgba(255, 115, 100, 0.4), 0 1px 3px #333333;
+	box-shadow: inset 0 0 0 1px rgba(255, 115, 100, 0.4), 0 1px 3px #333333;
+	color: #fff;
+	font: bold 20px/1 "helvetica neue", helvetica, arial, sans-serif;
+	padding: 12px 0 14px 0;
+	text-align: center;
+	text-shadow: 0 -1px 1px rgba(0, 0, 0, 0.8);
+	width: 115px;
+}
+
+button.login:hover {
+	background-color: #ef525d;
+	cursor: pointer;
+}
+
+button.login:focus {
+	background-color: #ef525d;
+}
+
+button.login:active {
+	background-color: #af0e1a;
+	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #d43c28), color-stop(50%, #ad3224), color-stop(50%, #9c1500), color-stop(100%, #700d00));
+	background-image: -webkit-linear-gradient(top, #d43c28 0%, #ad3224 50%, #9c1500 50%, #700d00 100%);
+	background-image: -moz-linear-gradient(top, #d43c28 0%, #ad3224 50%, #9c1500 50%, #700d00 100%);
+	background-image: -ms-linear-gradient(top, #d43c28 0%, #ad3224 50%, #9c1500 50%, #700d00 100%);
+	background-image: -o-linear-gradient(top, #d43c28 0%, #ad3224 50%, #9c1500 50%, #700d00 100%);
+	background-image: linear-gradient(top, #d43c28 0%, #ad3224 50%, #9c1500 50%, #700d00 100%);
+	-webkit-box-shadow: inset 0 0 0 1px rgba(255, 115, 100, 0.4);
+	box-shadow: inset 0 0 0 1px rgba(255, 115, 100, 0.4);
+}
+
+.btmLeftCorner {
+	border-bottom-left-radius:0 !important;
+	border-bottom-right-radius:0 !important;
+	border:0 !important;
+	border-bottom:1px solid white !important;
+}
+
+nav#portalNav {
+	height:40px;
+	background-color: rgb(111, 24, 24);
+	text-align:center;
+	width:100%;
+	border-bottom:1px solid white;
+}
+
+nav#portalNav div {
+	padding:5px 15px;
+	height: 40px;
+	background-color: rgb(111, 24, 24);
+	float:left;
+	border-bottom:1px solid white;
+}
+
+nav#portalNav a {
+	text-decoration:none !important;
+	font-size:18px !important;
+}
+
+nav#portalNav div:hover {
+	background-color: #ef525d;
+	cursor:pointer;
+}
+
+nav#portalNav select {
+	display:none;
+	width:100%;
+	height:100%;
+	border-radius:0 !important;
+	border:0;
+	background-color: #6f1818;
+}
+
+section#portalBox {
+	width:100%;
+	max-width:1000px;
+	background-color:black;
+	height:auto;
+	min-height:100%;
+	margin:0 auto;
+	overflow-y:scroll;
+}
+
+section#msntop a {
+	position:absolute;
+	top:5px;
+	right:10px;
+	font-size:12px;
+	line-height:12px;
+	text-decoration: none;
+	display:none;
+}
+
+section#msntop a:hover {
+	color:#ef525d;
+}
+
+h1.portalHeader {
+	width:100%;
+	text-align:center;
+	font-size:30px;
+	line-height:35px;
+	padding: 20px 10px;
+}
+
+@media screen and (max-width: 550px) {
+	nav#portalNav div {
+		display:none;
+	}
+	nav#portalNav select, section#msntop a {
+		display:block;
+	}
+}
+
+.adminStyle {
+	text-align:center !important;
+}
+
+.adminStyle input {
+	color: black!important;
+}
+
+div.userteam {
+	width:90%;
+	margin:0 auto;
+	text-align:center;
+	min-height:200px;
+	background-color:gray;
+	margin-bottom:20px;
+	padding:20px 0;
+}
+
+div.home {
+	float:left;
+	width:35%;
+}
+
+div.away {
+	width:35%;
+	float:right;
+}
+
+div.userteam div.game {
+	min-height:30px;
+	padding:0 10px;
+}
+
+div.sportHeader {
+	text-align:center;
+	width:100%;
+	min-height:30px;
+	border-bottom:1px solid black;
+	border-top:1px solid black;
+}
+
+@media screen and (max-width: 750px) {
+	div.team div {
+		font-size:14px !important;
+		line-height:14px !important;
+	}
+	table.team tr th, table.team tr td {
+		font-size:14px !important;
+	}
+}
+
+@media screen and (max-width: 550px) {
+	div.team div {
+		font-size:12px !important;
+		line-height:12px !important;
+	}
+	table.team tr th, table.team tr td {
+		font-size:12px !important;
+	}
+}
+
+div.sport {
+	width:90%;
+	text-align:center;
+	margin:30px auto;
+	padding:10px 20px;
+	background-color:gray;
+	min-height:200px;
+}
+
+div.division {
+	text-align:left;
+	margin-bottom:10px;
+	height: auto;
+}
+
+table.team {
+	width:100%;
+	height: auto;
+	text-align:center;
+	border-bottom:1px solid black;
+	border-left:1px solid black;
+	border-top:1px solid black;
+}
+
+table.team tr th {
+	border-bottom:1px solid black;
+}
+
+table.team tr td {
+	border-right:1px solid black;
+}
+
+div.manageteam {
+	width:90%;
+	margin:0 auto;
+	text-align:center;
+	min-height:200px;
+	background-color:gray;
+	margin-bottom:20px;
+	padding:20px;
+}
+
+select {
+	color:black !important;
+}

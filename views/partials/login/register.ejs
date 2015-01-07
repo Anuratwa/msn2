@@ -1,0 +1,33 @@
+<form method="post" class="minimal" style="position:relative;">
+    <label for="first">
+        Full Name:<br>
+        <input type="text" name="first" id="first" ng-model="user.first" placeholder="First Name" style="width:47%;" tabindex="2" autofocus>
+        <input type="text" name="last" id="last" ng-model="user.last" placeholder="Family Name" style="width:47%;" tabindex="3">
+    </label>
+    <label ng-if="!mgId" for="mcGillId">
+        McGill ID:
+        <input type="text" name="mcGillId" id="mcGillId" ng-model="user.mcgill_id" placeholder="Enter your McGill ID#:" tabindex="4">
+    </label>
+    <div class="inputDesc">Don't have an ID Number? <input type="checkbox" ng-model="mgId" ng-change="removeId()"></div>
+    <label for="number">
+        Phone Number:
+        <input type="tel" name="phone" id="phone" ng-model="user.phone" placeholder="Enter your Phone Number:" tabindex="5">
+    </label>
+    <label for="email">
+        Email:
+        <input type="email" name="email" id="email" ng-if="!mgEmail" ng-model="user.email" placeholder="Enter your McGill Email Address:" tabindex="6">
+        <input type="email" name="email" id="email" ng-if="mgEmail" ng-model="user.email" placeholder="Enter your Regular Email Address" tabindex="6">
+    </label>
+    <div class="inputDesc">Don't have a McGill Email? <input type="checkbox" ng-model="mgEmail"></div>
+    <label for="password">
+        Password:
+        <input type="password" name="password" id="password" ng-model="user.password" placeholder="Enter your New Password:" tabindex="7">
+    </label>
+    <label for="repassword">
+        Confirm Password:
+        <input type="password" name="repassword" id="repassword" ng-model="rePassword" placeholder="Re-enter your New Password:" tabindex="8">
+    </label>
+    <div class="inputDesc"><a href="/" class="butt">Back to Login</a></div>
+    <button type="submit" ng-click="registerUser(user,rePassword)" class="login" tabindex="9" onFocus="this.tabIndex=1;" onBlur="this.tabIndex=9;"> Register</button>
+    <div ng-show="showErrorMsg" class="inputDesc" style="text-align:center; color:white;" id="errorMsg"></div>
+</form>

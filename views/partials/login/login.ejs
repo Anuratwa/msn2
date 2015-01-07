@@ -1,0 +1,16 @@
+<form method="" class="minimal" style="position:relative;">
+    <label for="email">
+        Email:
+        <input type="text" name="email" id="email" ng-model="user.email" placeholder="Enter your email:" tabindex="2" autofocus>
+    </label>
+    <div class="inputDesc">Remember email? <input type="checkbox" ng-model="$window.localStorage.rememberEmail" ng-checked="isSelected()" ng-change="setRememberEmail()" tabindex="-1"></div>
+    <label for="password">
+        Password:
+        <input type="password" name="password" id="password" ng-model="user.password" placeholder="Enter your password:" tabindex="3">
+    </label>
+    <div class="inputDesc"><a href="/register" class="butt">Not Registered Yet?</a></div>
+    <button type="submit" ng-click="loginUser(user)" class="login" tabindex="3" onFocus="this.tabIndex=1;" onBlur="this.tabIndex=3;">
+        Sign in
+    </button>
+    <div ng-show="showErrorMsg" class="inputDesc" style="text-align:center; color:white;" id="errorMsg"></div>
+</form>
